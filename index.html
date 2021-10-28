@@ -1,0 +1,497 @@
+<?php 
+error_reporting(0);
+ini_set("display_errors", 0);
+include_once "class.crm.php";
+$settings = CRM::getLandingSettings();
+if (isset($_GET['cpa_form'])) {
+    $crm = new CRM();
+    $crm->landingSendOrder();
+}
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EVANORM VACCI</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">   
+
+    <?php echo isset($settings["header_code"]) && !empty($settings["header_code"]) ? $settings["header_code"] : ""; ?>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <a href="#to_form" class="button wow bounceInRight">ЗАКАЗАТЬ</a>
+                <img src="img/logo.png" alt="logo" class="logo wow bounceInLeft">
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </header>
+    <div style="clear: both;"></div>
+
+    <!--Block1-->
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="banner_cont col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                    <h1 class="wow fadeInUpBig">Свечи<br class="visible-xs"> <span class="transf">EVANORM VACCI</span><br class="hidden-xs">
+                        для <span class="transf">УНИЧТОЖЕНИЯ</span><br class="hidden-xs">
+                        ЭРОЗИИ</h1>
+                    <h2 class="wow fadeInDownBig">ИЗБАВИТЬСЯ<br class="visible-xs"> ОТ ЭРОЗИИ<br class="hidden-xs">
+                        И БЫТЬ ЗДОРОВОЙ –<br class="hidden-xs">
+                        ЛЕГКО!</h2>
+                </div>
+                <div style="clear: both;"></div>
+                <div class="banner_bottom">
+                    <div class="banner_bottom_left col-md-6 col-sm-6 col-xs-12">
+                        <img src="img/offer.png" alt="offer" class="offer wow jackInTheBox">
+                        <img src="img/icon_offer.png" alt="Offer" class="icon_offer wow rollIn" data-wow-delay="0.5s">
+                    </div>
+                    <div class="banner_bottom_right col-md-6 col-sm-6 col-xs-12">                
+                        <h3 class="wow slideInRight">За курс применения <span class="transf">EVANORM VACCI:</span></h3>
+                        <ul>
+                            <li class="wow slideInRight" data-wow-delay="0.05s"><span class="red">></span> Уничтожает патологические изменения - эрозию</li>
+                            <li class="wow slideInRight" data-wow-delay="0.1s"><span class="red">></span> Ликвидирует воспалительный процесс</li>
+                            <li class="wow slideInRight" data-wow-delay="0.15s"><span class="red">></span> Избавляет от причин развития эрозии</li>
+                            <li class="wow slideInRight" data-wow-delay="0.2s"><span class="red">></span> Предотвращает повторное появление</li>
+                        </ul>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+
+    <div class="buy_wrap">
+        <div class="container">
+            <div class="row">
+                <p class="title wow flipInX"><span>ПОЛУЧИТЕ</span><br class="visible-xs"> EVANORM VACCI <span>ПО</span> СПЕЦИАЛЬНОЙ ЦЕНЕ</p>
+                <div class="buy_cont">
+                    <div class="buy_wrap_offer wow jackInTheBox col-md-7 col-sm-7 col-xs-12">
+                        <img src="img/offer_last.png" alt="offer" class="offer">
+                    </div>
+                    <div class="buy_wrap_form wow lightSpeedIn col-md-5 col-sm-5 col-xs-12">
+                        <p class="newPrice "></p>
+                        <h6>НОВАЯ ЦЕНА:</h6>
+                        <span class="cpa-form-wrapper"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Block2-->
+    <section class="errosion_wrap">
+        <div class="container">
+            <div class="row">
+                <div class="errosion_cont col-md-8 col-sm-8 col-xs-12">
+                    <p class="title wow flipInX">ЭРОЗИЯ МОЖЕТ БЫТЬ «ТИХОЙ» -<br>
+                        БУДЬТЕ НАЧЕКУ</p>
+                    <h4 class="wow bounceInLeft">ЭРОЗИЮ МОГУТ СОПРОВОЖДАТЬ:</h4>
+                    <ul>
+                        <li class="wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.1s"><span class="list_style">></span> Выделения из влагалища и неприятный запах</li>
+                        <li class="wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.15s"><span class="list_style">></span> Дискомфорт и зуд в области половых органов</li>
+                        <li class="wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.2s"><span class="list_style">></span> Боль в области промежности и поясницы</li>
+                        <li class="wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.25s"><span class="list_style">></span> Болезненный половой акт и кровянистые выделения</li>
+                    </ul>
+                    <h5 class="wow bounceInUp" data-wow-duration="2s">НО, НЕ ВСЕГДА ЭРОЗИЯ ПРОЯВЛЯЕТ СЕБЯ<br>
+                        БОЛЬЮ ИЛИ ДРУГИМИ СИМПТОМАМИ</h5>
+                    <h6 class="wow bounceInDown" data-wow-duration="2s">Вы можете не знать о существовании эрозии,<br>
+                        но это не мешает ей развиваться</h6>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+
+    <!--Block3-->
+    <section class="method_wrap">
+        <div class="container">
+            <div class="row">
+                <p class="title wow flipInX">БЕЗВРЕДНЫЙ МЕТОД ЛЕЧЕНИЯ ЭРОЗИИ ШЕЙКИ МАТКИ</p>
+                <div class="method">
+                    <div class="method_wrap_offer col-md-5 col-sm-8 col-xs-12 wow jackInTheBox">
+                        <img src="img/offer.png" alt="offer">
+                    </div>
+                    <div class="method_descr col-md-7 col-sm-12 col-xs-12">
+                        <p class="wow bounceInRight" data-wow-duration="1s" data-wow-delay="0.1s">Лечение эрозии, тем более у нерожавших женщин, требует
+                            особенного подхода. Прижигание, замораживание и
+                            хирургическое лечение могут решить проблему сейчас и
+                            создать в будущем проблему более масштабную. Часто
+                            случается, что женщина лечившая эрозию такими методами
+                            в будущем не может родить естественным путем.</p>
+                        <p class="wow bounceInRight" data-wow-duration="1s" data-wow-delay="0.2s">Для безвредного лечения без негативных последствий созданы
+                            свечи <span class="transf">EVANORM VACCI</span>. Благодаря натуральным компонентам они
+                            мягко лечат эрозию и устраняют ее причины.</p>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+
+    <!--Block4-->
+    <section class="heal_wrap">
+        <div class="container">
+            <div class="row">
+                <p class="title wow flipInX">ЛЕЧЕНИЕ ЭРОЗИИ С ПОМОЩЬЮ EVANORM VACCI</p>
+                <div class="heal_active_cont">
+                    <div class="heal_active_item col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/active_icon_1.png" alt="" class="heal_active wow rollIn" data-wow-delay="0.2s">
+                        <p class="wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="1s">Свечи не только уничтожают
+                            эрозию, но и устраняют причины
+                            ее образования</p>
+                    </div>
+                    <div class="heal_active_item col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/active_icon_2.png" alt="" class="heal_active wow rollIn" data-wow-delay="0.5s">
+                        <p class="wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="1.2s">Активные компоненты
+                            <span class="tranf">EVANORM VACCI </span>останавливают
+                            воспалительный процесс и
+                            заживляет поврежденные ткани</p>
+                    </div>
+                    <div class="heal_active_item col-md-4 col-sm-4 col-xs-12">
+                        <img src="img/active_icon_3.png" alt="" class="heal_active wow rollIn" data-wow-delay="0.8s">
+                        <p class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="1.4s"><span class="tranf">EVANORM VACCI </span>восстанавливает
+                            и нормализует микрофлору
+                            влагалища</p>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <h4 class="wow fadeInDownBig">ТАКОЕ КОМПЛЕКСНОЕ ВОЗДЕЙСТВИЕ ПОЗВОЛЯЕТ ИЗБАВИТЬСЯ ОТ ЭРОЗИИ<br>
+                    РАЗ И НАВСЕГДА.</h4>
+                <h5 class="wow fadeInDownBig">ГЛАВНОЕ, EVANORM VACCI УСТРАНЯЕТ ПРОБЛЕМУ БЕЗ ВРЕДА ДЛЯ ЗДОРОВЬЯ И<br>
+                    ПОЛНОСТЬЮ НАТУРАЛЬНЫМИ КОМПОНЕНТАМИ.</h5>
+
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+
+    <!--Block6-->
+    <section class="components">
+        <div class="container">
+            <div class="row">
+                <p class="title wow flipInX">КОМПОНЕНТЫ EVANORM VACCI</p>
+                <div class="components_cont">
+                    <div class="components_item wow fadeIn col-lg-2 col-md-3 col-sm-4 col-xs-12" data-wow-delay="0s" data-wow-duration="3s">
+                        <img src="img/icon_component_1.png" alt="" class="icon_component">
+                        <p>БОРОВАЯ<br>
+                            МАТКА</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-2 col-md-3 col-sm-4 col-xs-12" data-wow-delay="0.05s" data-wow-duration="3s">
+                        <img src="img/icon_component_2.png" alt="" class="icon_component">
+                        <p>КРАСНАЯ<br>
+                            ЩЕТКА</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-2 col-md-3 col-sm-4 col-xs-12" data-wow-delay="0.1s" data-wow-duration="3s">
+                        <img src="img/icon_component_3.png" alt="" class="icon_component">
+                        <p>ТРАВА<br>
+                            ДУШИЦЫ</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-2 col-md-3 col-sm-4 col-xs-12" data-wow-delay="0.15s" data-wow-duration="3s">
+                        <img src="img/icon_component_4.png" alt="" class="icon_component">
+                        <p>ПЛОДЫ<br>
+                            ШИПОВНИКА</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-2 col-md-3 col-sm-4 col-xs-12" data-wow-delay="0.2s" data-wow-duration="3s">
+                        <img src="img/icon_component_5.png" alt="" class="icon_component">
+                        <p>КОРЕНЬ<br>
+                            СОЛОДКИ</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-2 col-md-3 col-sm-4 col-xs-12" data-wow-delay="0.25s" data-wow-duration="3s">
+                        <img src="img/icon_component_6.png" alt="" class="icon_component">
+                        <p>ЦВЕТКИ<br>
+                            КАЛЕНДУЛЫ</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-3 col-md-3 col-sm-4 col-xs-12" data-wow-delay="0.3s" data-wow-duration="3s">
+                        <img src="img/icon_component_7.png" alt="" class="icon_component">
+                        <p>ПЛОДЫ<br>
+                            МОЖЖЕВЕЛЬНИКА</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-2 col-md-3 col-sm-4 col-xs-12" data-wow-delay="0.35s" data-wow-duration="3s">
+                        <img src="img/icon_component_8.png" alt="" class="icon_component">
+                        <p>ЦВЕТКИ<br>
+                            РОМАШКИ</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-2 col-md-4 col-sm-4 col-xs-12" data-wow-delay="0.4s" data-wow-duration="3s">
+                        <img src="img/icon_component_9.png" alt="" class="icon_component">
+                        <p>АДАМОВ<br>
+                            КОРЕНЬ</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-2 col-md-4 col-sm-6 col-xs-12" data-wow-delay="0.45s" data-wow-duration="3s">
+                        <img src="img/icon_component_10.png" alt="" class="icon_component">
+                        <p>ЛЕПЕСТКИ<br>
+                            БЕЛЫХ РОЗ</p>
+                    </div>
+                    <div class="components_item wow fadeIn col-lg-3 col-md-4 col-sm-6 col-xs-12" data-wow-delay="0.5s" data-wow-duration="3s">
+                        <img src="img/icon_component_11.png" alt="" class="icon_component">
+                        <p>ТРАВА<br>
+                            ТЫСЯЧЕЛИСТНИКА</p>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+
+    <!--Block7-->
+    <section class="reasons_wrap">
+        <div class="container">
+            <div class="row">
+                <p class="title wow flipInX">4 ГЛАВНЫЕ ПРИЧИНЫ ДЛЯ ВЫБОРА EVANORM VACCI</p>
+                <div class="reasons_item wow fadeInDownBig" style="background-color: #DFBBA6">
+                    <p class="number">1 <span class="arrow_number">></span></p>
+                    <p class="reason">Безопасный способ лечения эрозии без хирургического вмешательства</p>
+                </div>
+                <div class="reasons_item wow fadeInDownBig" style="background-color: #F5CCBA">
+                    <p class="number">2 <span class="arrow_number">></span></p>
+                    <p class="reason">Незаменимый метод лечения для нерожавших женщин</p>
+                </div>
+                <div class="reasons_item wow fadeInDownBig" style="background-color: #DFBBA6">
+                    <p class="number">3 <span class="arrow_number">></span></p>
+                    <p class="reason">В составе свечей только натуральные компоненты</p>
+                </div>
+                <div class="reasons_item wow fadeInDownBig" style="background-color: #F5CCBA">
+                    <p class="number">4 <span class="arrow_number">></span></p>
+                    <p class="reason">Не имеет побочных действий</p>
+                </div>
+                <h6 class="wow fadeInDownBig">ВЫБИРАЙТЕ БЕЗОПАСНОЕ И ЭФФЕКТИВНОЕ ЛЕЧЕНИЕ</h6>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+
+    <!--Block8-->
+    <section class="delivery">
+        <div class="container">
+            <div class="row">
+                <p class="title wow flipInX">ЗАЯВКА<span class="arrow">><br class="visible-xs"></span>ДОСТАВКА <span class="arrow">><br class="visible-xs"></span>ОПЛАТА</p>
+                <div class="delivery_cont">
+                    <div class="delivery_item wow fadeIn col-md-4 col-sm-4 col-xs-12" data-wow-delay="0s">
+                        <img src="img/delivery_icon_1.png" alt="" class="delivery_icon">
+                        <p>Вы оставляете заявку<br>
+                            на сайте</p>
+                    </div>
+                    <div class="delivery_item wow fadeIn col-md-4 col-sm-4 col-xs-12" data-wow-delay="0.2s">
+                        <img src="img/delivery_icon_2.png" alt="" class="delivery_icon">
+                        <p>Заказ доставляется Вам<br>
+                            через 1 день</p>
+                    </div>
+                    <div class="delivery_item wow fadeIn col-md-4 col-sm-4 col-xs-12" data-wow-delay="0.4s">
+                        <img src="img/delivery_icon_3.png" alt="" class="delivery_icon">
+                        <p>Вы оплачиваете заказ<br>
+                            после получения</p>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+
+    <div class="testemonials_wrap">
+        <div class="container">
+            <div class="row">
+                <p class="title wow flipInX">МНЕНИЕ ПОКУПАТЕЛЕЙ EVANORM VACCI</p>
+                <div class="testemonials wow fadeInUpBig">
+                    <div class="owl-carousel">
+                        <div class="testem_item">
+                            <div class="testem_user col-md-3 col-sm-12 col-xs-12">
+                                <img src="img/user_1.png" alt="" class="user_photo">
+                            </div>
+                            <div class="testem_review col-md-9 col-sm-12 col-xs-12">
+                                <h6>Асем / 25 лет</h6>
+                                <p>Недавно у меня обнаружили эрозию. Спокойно ходила себе и не знала о том, что у меня
+                                    что-то не в порядке, не было никаких симптомов, болей или еще чего-нибудь. Прописали
+                                    кучу лекарств, которые обошлись бы мне в целое состояние, если бы не подруга,
+                                    которая поделилась своим опытом. У нее тоже была эрозия и она лечилась свечами Evanorm
+                                    vacci. Я попробовала и очень этому рада, по деньгам вышло нампого дешевле, чем
+                                    лекарства из того рецепта, а эффект наверное даже лучше, чем мог быть – никакой
+                                    эрозии уже на следующем приеме у меня не нашли.
+                                </p>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="testem_item">
+                            <div class="testem_user col-md-3 col-sm-12 col-xs-12">
+                                <img src="img/user_2.png" alt="" class="user_photo">
+                            </div>
+                            <div class="testem_review col-md-9 col-sm-12 col-xs-12">
+                                <h6>Гульнур / 27 лет</h6>
+                                <p>Мне эти свечи посоветовала мой гинеколог, хотя сначала она не хотела про них говорить
+                                    и пыталась прописать мне целый список непонятных лекарств и процедур. Сейчас лечусь
+                                    Evanorm vacci и самочувствие мое намного лучше, просто помимо эрозии у меня был
+                                    оофорит и были постоянные боли, выделения. Сейчас хорошо себя чувствую и уже
+                                    выделений меньше, да и низ живота не болит. Скоро прием у гинеколога и я думаю
+                                    результат будет хорошим.
+                                </p>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="testem_item">
+                            <div class="testem_user col-md-3 col-sm-12 col-xs-12">
+                                <img src="img/user_3.png" alt="" class="user_photo">
+                            </div>
+                            <div class="testem_review col-md-9 col-sm-12 col-xs-12">
+                                <h6>Юлия / 33 года</h6>
+                                <p>У меня эрозию нашли пару месяцев назад. Лечилась всеми возможными способами:
+                                    таблетки, физиотерапия. Нужного результата я не получала, а прижигать тоже не
+                                    хочется. В интернете много писали об этих свечах и я заказала, очень уж много
+                                    положительных отзывов у них было. Теперь я понимаю, почему о них столько хороших
+                                    отзывов, потому, что они действительно помогают. Моей эрозии как ни бывало, а мне
+                                    между прочим не 20 лет, чтобы все так быстро лечилось и заживало.
+                                </p>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="testem_item">
+                            <div class="testem_user col-md-3 col-sm-12 col-xs-12">
+                                <img src="img/user_4.png" alt="" class="user_photo">
+                            </div>
+                            <div class="testem_review col-md-9 col-sm-12 col-xs-12">
+                                <h6>Алина / 24 года</h6>
+                                <p>Эрозия в 24? Легко. Просто не лечите нормально воспаления и получите такой «бонус». Я
+                                    ненавижу больницы, а гинекологов так тем более. Сколько раз лечила оофорит и не
+                                    долечивала, видимо это и послужило образованию эрозии. Когда уже решилась браться
+                                    серьезно за лечение, то оказалось, что у меня еще и эрозия вдобавок к оофориту. Как
+                                    лечить, чем лечить не знаю, страшно и еще гинеколог всякое говорит. В общем, искала
+                                    решение для всех своих этих проблем и нашла свечи Evanorm vacci. Прошла курс и забыла,
+                                    что такое эрозия и оофорит, вот это я понимаю комплексное лечение</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+    <div class="buy_wrap">
+        <div class="container">
+            <div class="row">
+                <p class="title wow flipInX"><span>ПОЛУЧИТЕ</span><br class="visible-xs"> EVANORM VACCI <span>ПО</span> СПЕЦИАЛЬНОЙ ЦЕНЕ</p>
+                <div class="buy_cont">
+                    <div class="buy_wrap_offer wow jackInTheBox col-md-7 col-sm-7 col-xs-12">
+                        <img src="img/offer_last.png" alt="offer" class="offer">
+                    </div>
+                    <div class="buy_wrap_form wow lightSpeedIn col-md-5 col-sm-5 col-xs-12">
+                        <p class="newPrice "></p>
+                        <h6>НОВАЯ ЦЕНА:</h6>
+                        <span id="to_form" class="cpa-form-wrapper"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Block13-->
+    <footer class="footer">
+        <p id="crm-requisites"></p>
+        <a target="_blank" class="art" href="privacypolicy.html">Политика конфиденциальности</a>
+    </footer>
+
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css">
+	<link type="text/css" rel="stylesheet" href="css/animate.css">
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+    
+
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            //nav: true,
+            autoHeight:true,
+            autoplay: false,
+            autoplayTimeout: 3000,
+            smartSpeed: 850,
+            autoplayHoverPause: true,
+            animate: true,
+            responsive: {
+                0:{
+                    items:1
+                }
+            }
+        });
+
+        /*$('.owl-prev').html('<img src="img/prev.png">');
+        $('.owl-next').html('<img src="img/next.png">');*/
+    </script>
+
+    <div id="blurb" style="text-align: center;"></div>
+    <script language="javascript">!function(a,b){var c=a.getElementsByTagName("head")[0],d=a.createElement("script"),e=function(){c.appendChild(d,c)},f=function(a){return a.length>0?location.search.length>0?"?"+a+"&"+location.search.substr(1):"?"+a:location.search.length>0?location.search:""},g="referer=" + document.referrer+"&cpa_form=1",h="http://cpa.trafa.red/j2/vacci_lucem_otg/kxGUEN56";d.type="text/javascript",d.async=!0,d.src=h+f(g),e()}(document,window);</script>
+    <script type="text/javascript">
+        function cpaFormLoadedCallback() {
+            $(".cpa-select-country").change(function () {
+                var b = $(this).val();
+                $(".newPrice").text(parseInt(options[b].price) + " " + options[b].price_currency_abbr_short);
+                if (parseInt(options[b].price_old) > 0) {
+                    $(".oldPrice").text(parseInt(options[b].price_old) + " " + options[b].price_old_currency_abbr_short)
+                } else {
+                    $(".oldPrice").text(parseInt(options[b].price * 2) + " " + options[b].price_currency_abbr_short)
+                }
+                $("#crm-requisites").html(options[b].requisites)
+            });
+            $(".cpa-input-fio").attr("placeholder", "Ваше имя");
+            $(".cpa-input-phone").attr("placeholder", "Ваш телефон");
+            $(".cpa-input-submit").html("Заказать").attr('onclick', "yaCounter45713811.reachGoal('ORDER'); return true;");
+            var a = $(".cpa-form-wrapper:first .cpa-select-country").val();
+            $(".newPrice").text(parseInt(options[a].price) + " " + options[a].price_currency_abbr_short);
+            if (parseInt(options[a].price_old) > 0) {
+                $(".oldPrice").text(parseInt(options[a].price_old) + " " + options[a].price_old_currency_abbr_short)
+            } else {
+                $(".oldPrice").text(parseInt(options[a].price * 2) + " " + options[a].price_currency_abbr_short)
+            }
+            $("#crm-requisites").html(options[a].requisites);
+        };
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+	<!-- <script type="text/javascript" >
+	    (function (d, w, c) {
+	        (w[c] = w[c] || []).push(function() {
+	            try {
+	                w.yaCounter46501431 = new Ya.Metrika({
+	                    id:46501431,
+	                    clickmap:true,
+	                    trackLinks:true,
+	                    accurateTrackBounce:true,
+	                    webvisor:true,
+	                    trackHash:true
+	                });
+	            } catch(e) { }
+	        });
+
+	        var n = d.getElementsByTagName("script")[0],
+	            s = d.createElement("script"),
+	            f = function () { n.parentNode.insertBefore(s, n); };
+	        s.type = "text/javascript";
+	        s.async = true;
+	        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+	        if (w.opera == "[object Opera]") {
+	            d.addEventListener("DOMContentLoaded", f, false);
+	        } else { f(); }
+	    })(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/46501431" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
+	<!-- /Yandex.Metrika counter -->
+    
+    <?php echo isset($settings["footer_code"]) && !empty($settings["footer_code"]) ? $settings["footer_code"] : ""; ?>
+</body>
+</html>
